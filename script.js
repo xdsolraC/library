@@ -56,6 +56,16 @@ function createBookCard(book) {
     booksList.appendChild(bookElem)
 }
 
+// display created books
+function displayBooks() {
+    booksList.innerHTML = "";
+    myLibrary.forEach((book) => {
+        createBookCard(book);
+    })
+}
+
+displayBooks()
+
 // Dialog functions
 const blurBg = document.querySelector('.blur-background');
 function showDialog() {
