@@ -129,3 +129,18 @@ document.addEventListener("keyup", () => {
         blurBg.classList.remove("active");
     }
 });
+
+// Add book from form when submitted 
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    closeDialog();
+    const formData = new FormData(event.target);
+    const book = new Book();
+    formData.forEach((value, key) => {
+        book[key] = value;
+    });
+    addBookToLibrary(book)
+    saveLibrary();
+    displayBooks()
+    form.reset();
+}) 
