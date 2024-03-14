@@ -12,6 +12,10 @@ function Book(title, author, pages, read) {
     this.read = read;
 }
 
+Book.prototype.readToggle = function () {
+    this.read = this.read === "notread" ? "read" : "notread";
+}
+
 // Library functions
 
 // Function to save books in library
@@ -51,6 +55,37 @@ function createBookCard(book) {
     <hr>
     <span class="card-text">Read Status:</span>`
 
+    // Delete button
+    const deleteBtn = document.createElement("button");
+    deleteBtn.classList.add("deleteBtn")
+    deleteBtn.addEventListener("click", () => {
+        const index = myLibrary.findIndex(b => b.title === book.title);
+        if (index !== -1) {
+            myLibrary.splice(index, 1);
+            saveLibrary();
+            displayBooks();
+        }
+    })
+
+    // Read toggle button
+    const readBtn = document.createElement("button");
+    readBtn.classList.add("pill", "readToggle")
+    readBtn.innerText = `${read}`
+    readBtn.addEventListener("click", () => {
+        book.readToggle();
+        saveLibrary();
+        displayBooks();
+    })
+
+    // Style read toggle button based on read status
+    if (book.read === "read") {
+        readBtn.style.backgroundColor = "#B64444";
+        readBtn.style.color = "#fff";
+        readBtn.style.border = "2px solid transparent";
+    }
+
+    bookCard.prepend(deleteBtn)
+    cardContent.appendChild(readBtn)
     bookCard.appendChild(cardContent)
     bookElem.append(bookCard)
     booksList.appendChild(bookElem)
