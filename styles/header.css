@@ -1,0 +1,24 @@
+header {
+    padding: 20px;
+    background-color: #B64444;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+header .logo {
+    width: 60px;
+    height: 80.2px;
+}
+
+header img {
+    max-width: 100%;
+}
+
+header h1 {
+    color: white;
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 900;
+}
