@@ -35,6 +35,27 @@ function getLibrary() {
     }
 }
 
+// Function to create and append a BookCard
+function createBookCard(book) {
+    let { title, author, pages, read } = book;
+    read = read == "notread" ? "not read" : "read";
+
+    const bookElem = document.createElement("li")
+    const bookCard = document.createElement("div")
+    bookCard.classList.add("card")
+    const cardContent = document.createElement("div")
+    cardContent.classList.add("content")
+    cardContent.innerHTML = `<div class="pill pill-top"><span id="card-pages">${pages}</span> Pages</div>
+    <span id="card-title">${title}</span>
+    <p class="card-text">By <span id="card-author">${author}</span></p>
+    <hr>
+    <span class="card-text">Read Status:</span>`
+
+    bookCard.appendChild(cardContent)
+    bookElem.append(bookCard)
+    booksList.appendChild(bookElem)
+}
+
 // Dialog functions
 const blurBg = document.querySelector('.blur-background');
 function showDialog() {
