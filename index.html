@@ -6,8 +6,68 @@
     <title>Library</title>
     <link rel="stylesheet" href="styles/styles.css">
 </head>
+
 <body>
-    
+    <header>
+        <div class="logo">
+            <img src="images/odin-logo.png" alt="The Oding Project logo">
+        </div>
+        <h1>TOP LIBRARY</h1>
+    </header>
+
+    <main>
+        <h2 class="main-h2">Books</h2>
+
+        <button class="btn">New Book</button>
+
+        <div class="books">
+            <ul class="booksList">
+
+            </ul>
+        </div>
+
+        <dialog>
+            <div class="dialog-header">
+                <h2>New book</h2>
+                <button class="btn dialogBtn">Close</button>
+            </div>
+            </header>
+
+            <form method="dialog">
+                <fieldset>
+                    <div>
+                        <label for="title">Title</label>
+                        <input id="title" name="title" minlength="3" maxlength="50" type="text" autocomplete="off"
+                            required>
+                    </div>
+
+                    <div>
+                        <label for="author">Author</label>
+                        <input id="author" name="author" minlength="3" maxlength="25" type="text" autocomplete="off"
+                            required>
+                    </div>
+
+                    <div>
+                        <label for="pages">Pages</label>
+                        <input id="pages" name="pages" type="number" min="1" max="9999" required>
+                    </div>
+
+                    <div>
+                        <label for="read-status">Read status</label>
+                        <select id="read-status" name="read">
+                            <option value="notread" selected>Not read</option>
+                            <option value="read">Read</option>
+                        </select>
+                    </div>
+                </fieldset>
+                <input type="submit" value="Add" class="btn dialogBtn">
+            </form>
+        </dialog>
+
+        <div class="blur-background"></div>
+
+    </main>
+
     <script src="script.js"></script>
 
 </body>
