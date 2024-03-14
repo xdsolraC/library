@@ -1,0 +1,84 @@
+.dialogBtn {
+    background-color: white;
+}
+
+.dialogBtn:hover {
+    border: 2px solid white;
+}
+
+dialog {
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 16px;
+    background-color: #B64444;
+    width: 375px;
+    padding: 20px;
+    color: white;
+}
+
+.dialog-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+form>fieldset {
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+label {
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+input,
+select {
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    border-bottom: 2px solid white;
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    font-family: "Jost";
+}
+
+select{
+    cursor: pointer;
+}
+
+/* DISABLE NUMBER INPUT ARROWS */
+input#pages::-webkit-outer-spin-button,
+input#pages::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input#pages {
+    appearance: textfield;
+    -moz-appearance: textfield;
+}
+
+option {
+    color: black;
+}
+
+input::content {
+    color: white;
+}
+
+/* BLUR BG */
+.blur-background.active {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(4px);
+}
