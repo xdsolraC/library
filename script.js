@@ -91,6 +91,16 @@ function createBookCard(book) {
     booksList.appendChild(bookElem)
 }
 
+// Add some books by default, if they don't already exist
+getLibrary();
+if (myLibrary.length == 0) {
+    addBookToLibrary(new Book("meditations", "marco aurelio", 233, "notread"));
+    addBookToLibrary(new Book("confidence", "martin meadows", 75, "read"));
+    addBookToLibrary(new Book("can't hurt me", "david goggins", 364, "read"));
+    addBookToLibrary(new Book("writing to learn", "william zinsser", 272, "read"));
+    saveLibrary();
+}
+
 // display created books
 function displayBooks() {
     booksList.innerHTML = "";
