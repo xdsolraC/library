@@ -4,16 +4,17 @@ const form = document.querySelector("form")
 
 let myLibrary = [];
 
-function Book(title, author, pages, read) {
-    // the constructor...
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}
-
-Book.prototype.readToggle = function () {
-    this.read = this.read === "notread" ? "read" : "notread";
+class Book {
+    constructor(title, author, pages, read) {
+        // the constructor...
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+    readToggle() {
+        this.read = this.read === "notread" ? "read" : "notread";
+    }
 }
 
 // Library functions
